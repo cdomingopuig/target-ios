@@ -1,0 +1,10 @@
+coverage_service: cobertura_xml
+workspace: target.xcworkspace
+xcodeproj: target.xcodeproj
+scheme: target-develop
+binary_basename: target-Debug
+ignore:
+  - Pods/*
+  - target/Extensions/UIImageExtension.swift
+  - R.generated.swift
+  - target/AppDelegate.swift
