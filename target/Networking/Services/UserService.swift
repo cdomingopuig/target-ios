@@ -28,7 +28,7 @@ class UserService: BaseApiService<UserResource> {
   ) {
     request(
       for: .login(email, password),
-      at: "user",
+      at: "data",
       onSuccess: { [weak self] (result: User, response) -> Void in
         guard let headers = response.response?.allHeaderFields else {
           failure(UserServiceError.noResponse)
@@ -50,7 +50,7 @@ class UserService: BaseApiService<UserResource> {
   ) {
     request(
       for: .signup(email, password, avatar64),
-      at: "user",
+      at: "data",
       onSuccess: { [weak self] (result: User, response) -> Void in
         guard let headers = response.response?.allHeaderFields else {
           failure(UserServiceError.noResponse)
@@ -69,7 +69,7 @@ class UserService: BaseApiService<UserResource> {
   ) {
     request(
       for: .profile,
-      at: "user",
+      at: "data",
       onSuccess: { (result: User, _) -> Void in
         success(result)
     },

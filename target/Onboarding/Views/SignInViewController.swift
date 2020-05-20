@@ -12,9 +12,11 @@ class SignInViewController: UIViewController {
   
   // MARK: - Outlets
   
-  @IBOutlet weak var logIn: UIButton!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var emailError: UILabel!
+  @IBOutlet weak var passwordError: UILabel!
+  
   
   var viewModel: SignInViewModelWithCredentials!
   
@@ -22,14 +24,12 @@ class SignInViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    logIn.setRoundBorders(22)
     viewModel.delegate = self
-    setLoginButton(enabled: false)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    navigationController?.setNavigationBarHidden(false, animated: true)
+    navigationController?.setNavigationBarHidden(true, animated: true)
   }
   
   // MARK: - Actions
@@ -45,28 +45,55 @@ class SignInViewController: UIViewController {
     }
   }
   
-  @IBAction func tapOnSignInButton(_ sender: Any) {
-    viewModel.login()
+  @IBAction func editingDidEnd(_ sender: UITextField) {
+    validateFields(sender)
   }
   
-  func setLoginButton(enabled: Bool) {
-    logIn.alpha = enabled ? 1 : 0.5
-    logIn.isEnabled = enabled
+  func validateFields(_ sender: UITextField?) {
+    switch sender {
+    case emailField:
+      let error = !viewModel.hasValidEmail
+      setFieldError(input: emailField, error: error, message: "Invalid email")
+    case passwordField:
+      let error = !viewModel.hasValidPassword
+      setFieldError(input: passwordField, error: error, message: "Password can't be empty")
+    default:
+      validateFields(emailField)
+      validateFields(passwordField)
+    }
   }
+  
+  func setFieldError(input: UITextField, error: Bool, message: String) {
+    let color = error ? UIColor(named: "Alizarin Crimson")  : UIColor.black
+    let width = error ? 1 : 0.5
+    input.layer.borderColor = color?.cgColor
+    input.layer.borderWidth = CGFloat(width)
+    let label = input == emailField ? emailError : passwordError
+    label?.text = error ? message :  ""
+  }
+  
+  @IBAction func tapOnSignInButton(_ sender: Any) {
+    validateFields(nil)
+    if viewModel.hasValidData {
+      viewModel.login()
+    }
+  }
+  
+  @IBAction func tapOnSignUpButton(_ sender: Any) {
+    viewModel.signUp()
+  }
+  
 }
 
 extension SignInViewController: SignInViewModelDelegate {
-  func didUpdateCredentials() {
-    setLoginButton(enabled: viewModel.hasValidCredentials)
-  }
-  
   func didUpdateState() {
     switch viewModel.state {
     case .loading:
       UIApplication.showNetworkActivity()
     case .error(let errorDescription):
       UIApplication.hideNetworkActivity()
-      showMessage(title: "Error", message: errorDescription)
+      setFieldError(input: emailField, error: true, message: "")
+      setFieldError(input: passwordField, error: true, message: errorDescription)
     case .idle:
       UIApplication.hideNetworkActivity()
     }

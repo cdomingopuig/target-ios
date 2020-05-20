@@ -35,8 +35,8 @@
 /* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "oRD-MA-2oV"; */
 "oRD-MA-2oV.normalTitle" = "REGISTRATE";
 
-/* Class = "UILabel"; text = "Sign In"; ObjectID = "oeJ-D0-ol5"; */
-"oeJ-D0-ol5.text" = "Inicia sesión";
+/* Class = "UILabel"; text = "TARGET MVD"; ObjectID = "oeJ-D0-ol5"; */
+"oeJ-D0-ol5.text" = "TARGET MVD";
 
 /* Class = "UIButton"; normalTitle = "Get my profile"; ObjectID = "sla-gz-amO"; */
 "sla-gz-amO.normalTitle" = "Ver mi perfil";

@@ -35,8 +35,8 @@
 /* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "oRD-MA-2oV"; */
 "oRD-MA-2oV.normalTitle" = "SIGN UP";
 
-/* Class = "UILabel"; text = "Sign In"; ObjectID = "oeJ-D0-ol5"; */
-"oeJ-D0-ol5.text" = "Sign In";
+/* Class = "UILabel"; text = "TARGET MVD"; ObjectID = "oeJ-D0-ol5"; */
+"oeJ-D0-ol5.text" = "TARGET MVD";
 
 /* Class = "UIButton"; normalTitle = "Get my profile"; ObjectID = "sla-gz-amO"; */
 "sla-gz-amO.normalTitle" = "Get my profile";
@@ -47,5 +47,5 @@
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "xYV-eE-Ila"; */
 "xYV-eE-Ila.placeholder" = "Email";
 
-/* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "zbs-uB-Nr7"; */
-"zbs-uB-Nr7.normalTitle" = "LOG IN";
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "zbs-uB-Nr7"; */
+"zbs-uB-Nr7.normalTitle" = "SIGN IN";
