@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 import IQKeyboardManagerSwift
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,7 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let rootVC = AppNavigator.shared.rootViewController
     window?.rootViewController = rootVC
-
+    
+    GMSServices.provideAPIKey(ConfigurationManager.getValue(for: "APIKey") ?? "")
     return true
   }
   

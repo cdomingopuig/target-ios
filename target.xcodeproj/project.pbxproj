@@ -20,6 +20,7 @@
 		6316EF75246C8C3600A36A1F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6316EF70246C8C3600A36A1F /* OpenSans-Bold.ttf */; };
 		6316EF76246C8C3600A36A1F /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6316EF71246C8C3600A36A1F /* OpenSans-SemiBold.ttf */; };
 		6316EF77246C8C3600A36A1F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6316EF72246C8C3600A36A1F /* OpenSans-ExtraBold.ttf */; };
+		634BE425247FEDEF0028DE12 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BE424247FEDEF0028DE12 /* UINavigationControllerExtension.swift */; };
 		9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */; };
 		9B0C72721C738D3400BAF3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */; };
 		9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AA3981ED35007005A4D26 /* SignInViewController.swift */; };
@@ -106,6 +107,7 @@
 		6316EF70246C8C3600A36A1F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		6316EF71246C8C3600A36A1F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		6316EF72246C8C3600A36A1F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		634BE424247FEDEF0028DE12 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		85FF9D270B540FD7BDB842CF /* Pods-target.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-target.staging.xcconfig"; path = "Target Support Files/Pods-target/Pods-target.staging.xcconfig"; sourceTree = "<group>"; };
 		9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				071CD2612228544700E6D385 /* FontExtension.swift */,
 				FE251D0622A7FE0F00E0DE90 /* DataExtension.swift */,
 				9B5EAB49232C146D00B9CE3C /* UITextFieldExtension.swift */,
+				634BE424247FEDEF0028DE12 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				9B22F5581C720E7D003DDCD8 /* ShellScript */,
 				FE583F0222AEDC6F00EF3CDA /* Crashlytics */,
 				41AB00D3811BEA7CB97944AB /* [CP] Embed Pods Frameworks */,
+				8A682FB0144B06B00263E96D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -695,6 +699,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-target/Pods-target-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8A682FB0144B06B00263E96D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-target/Pods-target-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-target/Pods-target-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B22F5581C720E7D003DDCD8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -744,7 +768,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -824,6 +848,7 @@
 				FE251D0722A7FE0F00E0DE90 /* DataExtension.swift in Sources */,
 				FE583F1022AFC9FA00EF3CDA /* AnalyticsEvent.swift in Sources */,
 				FE4D635E22B2CAFF00685161 /* AppNavigator.swift in Sources */,
+				634BE425247FEDEF0028DE12 /* UINavigationControllerExtension.swift in Sources */,
 				E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */,
 				9BE3669F1F10175E007CAECD /* Base64Media.swift in Sources */,
 				9BAFB7C32114E3CD0099DC61 /* SignInViewModel.swift in Sources */,

@@ -7,14 +7,11 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class HomeViewController: UIViewController {
   
   // MARK: - Outlets
-  
-  @IBOutlet weak var welcomeLabel: UILabel!
-  @IBOutlet weak var logOut: UIButton!
-  @IBOutlet weak var deleteAccountButton: UIButton!
   
   var viewModel: HomeViewModel!
   
@@ -22,23 +19,15 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    logOut.setRoundBorders(22)
-    deleteAccountButton.setRoundBorders(22)
+    navigationController?.setupNavigationBar()
+    title = "Target Points"
+    let camera = GMSCameraPosition.camera(withLatitude: -34.9011, longitude: -56.1645, zoom: 6.0)
+    let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+    self.view.addSubview(mapView)
   }
   
   // MARK: - Actions
   
-  @IBAction func tapOnGetMyProfile(_ sender: Any) {
-    viewModel.loadUserProfile()
-  }
-
-  @IBAction func tapOnLogOutButton(_ sender: Any) {
-    viewModel.logoutUser()
-  }
-  
-  @IBAction func tapOnDeleteAccount(_ sender: Any) {
-    viewModel.deleteAccount()
-  }
 }
 
 extension HomeViewController: HomeViewModelDelegate {
@@ -46,7 +35,6 @@ extension HomeViewController: HomeViewModelDelegate {
     switch viewModel.state {
     case .idle:
       UIApplication.hideNetworkActivity()
-      showMessage(title: "My Profile", message: "email: \(viewModel.userEmail ?? "")")
     case .loading:
       UIApplication.showNetworkActivity()
     case .error(let errorDescription):
