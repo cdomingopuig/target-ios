@@ -38,10 +38,6 @@ class SignInViewModelWithCredentials {
     return hasValidEmail && hasValidPassword
   }
   
-  func signUp() {
-    AppNavigator.shared.navigate(to: OnboardingRoutes.signUp, with: .changeRoot)
-  }
-  
   func login() {
     state = .loading
     UserService.sharedInstance
