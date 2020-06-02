@@ -19,6 +19,5 @@ target 'target' do
 
   # GOOGLE MAPS SDK ---
   pod 'GoogleMaps'
-  pod 'GooglePlaces'
   # ------
 end

@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
     navigationController?.setupNavigationBar()
     title = "Target Points"
     let camera = GMSCameraPosition.camera(withLatitude: -34.9011, longitude: -56.1645, zoom: 6.0)
-    let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-    self.view.addSubview(mapView)
+    let mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
+    view.addSubview(mapView)
   }
   
   // MARK: - Actions

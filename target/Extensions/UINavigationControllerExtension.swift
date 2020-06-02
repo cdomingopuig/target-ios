@@ -14,6 +14,9 @@ extension UINavigationController {
     setNavigationBarHidden(false, animated: true)
     navigationBar.tintColor = .black
     navigationBar.barTintColor = .white
-    navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 13) ?? UIFont.systemFont(ofSize: 13)]
+    navigationBar.titleTextAttributes = [
+      .foregroundColor: UIColor.black,
+      .font: UIFont.semiBold(ofSize: 13)
+    ]
   }
 }

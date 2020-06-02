@@ -10,9 +10,26 @@ import UIKit
 import RSFontSizes
 
 extension UIFont {
-  var bold: UIFont { return withWeight(.bold) }
-  var semibold: UIFont { return withWeight(.semibold) }
-  var light: UIFont { return withWeight(.ultraLight) }
+  
+  class func bold(ofSize size: CGFloat) -> UIFont {
+    return font(withName: "OpenSans-Bold", size: size)
+  }
+  
+  class func extraBold(ofSize size: CGFloat) -> UIFont {
+    return font(withName: "OpenSans-ExtraBold", size: size)
+  }
+
+  class func light(ofSize size: CGFloat) -> UIFont {
+    return font(withName: "OpenSans-Regular", size: size)
+  }
+
+  class func regular(ofSize size: CGFloat) -> UIFont {
+    return font(withName: "OpenSans-Regular", size: size)
+  }
+  
+  class func semiBold(ofSize size: CGFloat) -> UIFont {
+    return font(withName: "OpenSans-SemiBold", size: size)
+  }
   
   private func withWeight(_ weight: UIFont.Weight) -> UIFont {
     var attributes = fontDescriptor.fontAttributes
@@ -36,4 +53,5 @@ extension UIFont {
                       size: size)
     return font ?? UIFont.systemFont(ofSize: size)
   }
+  
 }
