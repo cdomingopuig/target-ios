@@ -16,4 +16,8 @@ target 'target' do
   pod 'FBSDKCoreKit', '~> 5.5.0'
   pod 'FBSDKLoginKit', '~> 5.5.0'
   # ------
+
+  # GOOGLE MAPS SDK ---
+  pod 'GoogleMaps'
+  # ------
 end

@@ -39,6 +39,11 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
+  - GoogleMaps (3.8.0):
+    - GoogleMaps/Maps (= 3.8.0)
+  - GoogleMaps/Base (3.8.0)
+  - GoogleMaps/Maps (3.8.0):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (6.2.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -82,6 +87,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 5.5.0)
   - FBSDKLoginKit (~> 5.5.0)
   - Firebase/Core (~> 6.1.0)
+  - GoogleMaps
   - IQKeyboardManagerSwift (~> 6.1.1)
   - Moya (~> 13.0)
   - R.swift (~> 5.0.3)
@@ -100,6 +106,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - GoogleAppMeasurement
+    - GoogleMaps
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - Moya
@@ -121,6 +128,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 66bdef3b310a026880e2a5bc8aa586ab62ce4543
   FirebaseInstanceID: 662b8108a09fe9ed01aafdedba100fde8536b0f6
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
+  GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
@@ -130,6 +138,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RSFontSizes: cf14ae41c2807b66573f7064528ccff8c98251c9
 
-PODFILE CHECKSUM: d50f23a38963b4d54503ef04d2f950864c5d2db1
+PODFILE CHECKSUM: 1912c0fb13a972eca872501de63bee7741a25799
 
 COCOAPODS: 1.9.0
