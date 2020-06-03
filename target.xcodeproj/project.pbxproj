@@ -22,6 +22,7 @@
 		6316EF77246C8C3600A36A1F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6316EF72246C8C3600A36A1F /* OpenSans-ExtraBold.ttf */; };
 		634BE425247FEDEF0028DE12 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BE424247FEDEF0028DE12 /* UINavigationControllerExtension.swift */; };
 		634BE41F247FB7DD0028DE12 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BE41E247FB7DD0028DE12 /* UIColorExtension.swift */; };
+		634BE42724817D1F0028DE12 /* UserMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BE42624817D1F0028DE12 /* UserMarker.swift */; };
 		9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */; };
 		9B0C72721C738D3400BAF3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */; };
 		9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AA3981ED35007005A4D26 /* SignInViewController.swift */; };
@@ -110,6 +111,7 @@
 		6316EF72246C8C3600A36A1F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		634BE424247FEDEF0028DE12 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		634BE41E247FB7DD0028DE12 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		634BE42624817D1F0028DE12 /* UserMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMarker.swift; sourceTree = "<group>"; };
 		85FF9D270B540FD7BDB842CF /* Pods-target.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-target.staging.xcconfig"; path = "Target Support Files/Pods-target/Pods-target.staging.xcconfig"; sourceTree = "<group>"; };
 		9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
+				634BE42624817D1F0028DE12 /* UserMarker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -767,7 +770,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -811,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8290BFE1D832D9200599960 /* UIViewExtension.swift in Sources */,
+				634BE42724817D1F0028DE12 /* UserMarker.swift in Sources */,
 				07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */,
 				FE583F0C22AFC9EA00EF3CDA /* AnalyticsService.swift in Sources */,
 				FEE8080E22A6BB4F00743D1B /* APIError.swift in Sources */,

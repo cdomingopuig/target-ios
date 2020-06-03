@@ -27,3 +27,9 @@ enum ErrorDomain: String {
   case generic = "GenericError"
   case parsing = "ParsingError"
 }
+
+// Map constants
+
+let DefaultLatitude = -34.9011
+let DefaultLongitude = -56.1645
+let DefaultMapZoom: Float = 12
