@@ -54,7 +54,7 @@ class HomeViewModel {
   
   private func didlogOutAccount() {
     AppNavigator.shared.navigate(
-      to: OnboardingRoutes.firstScreen,
+      to: OnboardingRoutes.signIn,
       with: .changeRoot
     )
     AnalyticsManager.shared.reset()

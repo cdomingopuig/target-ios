@@ -9,7 +9,6 @@
 import Foundation
 
 protocol SignInViewModelDelegate: class {
-  func didUpdateCredentials()
   func didUpdateState()
 }
 
@@ -23,20 +22,20 @@ class SignInViewModelWithCredentials {
   
   weak var delegate: SignInViewModelDelegate?
   
-  var email = "" {
-    didSet {
-      delegate?.didUpdateCredentials()
-    }
+  var email = ""
+  
+  var password = ""
+  
+  var hasValidEmail: Bool {
+    return email.isEmailFormatted()
   }
   
-  var password = "" {
-    didSet {
-      delegate?.didUpdateCredentials()
-    }
+  var hasValidPassword: Bool {
+    return !password.isEmpty
   }
   
-  var hasValidCredentials: Bool {
-    return email.isEmailFormatted() && !password.isEmpty
+  var hasValidData: Bool {
+    return hasValidEmail && hasValidPassword
   }
   
   func login() {
@@ -52,7 +51,11 @@ class SignInViewModelWithCredentials {
               AppNavigator.shared.navigate(to: HomeRoutes.home, with: .changeRoot)
              },
              failure: { [weak self] error in
-               self?.state = .error(error.localizedDescription)
+              if let apiError = error as? APIError {
+                self?.state = .error(apiError.firstError ?? "") // show the first error
+              } else {
+                self?.state = .error(error.localizedDescription)
+              }
              })
   }
 }

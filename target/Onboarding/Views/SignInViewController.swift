@@ -9,31 +9,30 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-  
+
   // MARK: - Outlets
-  
-  @IBOutlet weak var logIn: UIButton!
+
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
-  
+  @IBOutlet weak var emailErrorLabel: UILabel!
+  @IBOutlet weak var passwordErrorLabel: UILabel!
+
   var viewModel: SignInViewModelWithCredentials!
-  
+
   // MARK: - Lifecycle Events
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    logIn.setRoundBorders(22)
     viewModel.delegate = self
-    setLoginButton(enabled: false)
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    navigationController?.setNavigationBarHidden(false, animated: true)
+    navigationController?.setNavigationBarHidden(true, animated: true)
   }
-  
+
   // MARK: - Actions
-  
+
   @IBAction func credentialsChanged(_ sender: UITextField) {
     let newValue = sender.text ?? ""
     switch sender {
@@ -44,31 +43,60 @@ class SignInViewController: UIViewController {
     default: break
     }
   }
-  
+
+  @IBAction func editingDidEnd(_ sender: UITextField) {
+    validateFields(sender)
+  }
+
   @IBAction func tapOnSignInButton(_ sender: Any) {
-    viewModel.login()
+    validateFields(nil)
+    if viewModel.hasValidData {
+      viewModel.login()
+    }
   }
-  
-  func setLoginButton(enabled: Bool) {
-    logIn.alpha = enabled ? 1 : 0.5
-    logIn.isEnabled = enabled
+
+  @IBAction func tapOnSignUpButton(_ sender: Any) {
+    AppNavigator.shared.navigate(to: OnboardingRoutes.signUp, with: .changeRoot)
   }
+
 }
 
 extension SignInViewController: SignInViewModelDelegate {
-  func didUpdateCredentials() {
-    setLoginButton(enabled: viewModel.hasValidCredentials)
-  }
-  
   func didUpdateState() {
     switch viewModel.state {
     case .loading:
       UIApplication.showNetworkActivity()
     case .error(let errorDescription):
       UIApplication.hideNetworkActivity()
-      showMessage(title: "Error", message: errorDescription)
+      setFieldError(input: emailField, error: true, message: "")
+      setFieldError(input: passwordField, error: true, message: errorDescription)
     case .idle:
       UIApplication.hideNetworkActivity()
     }
+  }
+}
+
+extension SignInViewController: UITextFieldDelegate {
+  func validateFields(_ sender: UITextField?) {
+    switch sender {
+    case emailField:
+      let error = !viewModel.hasValidEmail
+      setFieldError(input: emailField, error: error, message: "Invalid email")
+    case passwordField:
+      let error = !viewModel.hasValidPassword
+      setFieldError(input: passwordField, error: error, message: "Password can't be empty")
+    default:
+      validateFields(emailField)
+      validateFields(passwordField)
+    }
+  }
+
+  func setFieldError(input: UITextField, error: Bool, message: String) {
+    let color = error ? UIColor.errorColor : UIColor.black
+    let width = CGFloat(error ? 1 : 0.5)
+    input.layer.borderColor = color?.cgColor
+    input.layer.borderWidth = width
+    let label = input == emailField ? emailErrorLabel : passwordErrorLabel
+    label?.text = error ? message :  ""
   }
 }

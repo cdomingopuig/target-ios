@@ -62,6 +62,9 @@ struct RailsError: Decodable {
     } else if let error = try? values.decode(String.self, forKey: .errors) {
       self.error = error
       self.errors = nil
+    } else if let errors = try? values.decode([String].self, forKey: .errors) {
+      self.errors = nil
+      self.error = errors[0]
     } else {
       error = try? values.decode(String.self, forKey: .error)
       errors = nil

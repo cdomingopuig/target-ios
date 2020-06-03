@@ -81,5 +81,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>FirebaseScreenReportingEnabled</key>
+	<string>NO</string>
 </dict>
 </plist>
