@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol SignUpViewModelDelegate: class {
-  func formDidChange()
   func didUpdateState()
 }
 
@@ -24,33 +23,45 @@ class SignUpViewModelWithEmail {
   
   weak var delegate: SignUpViewModelDelegate?
   
-  var email = "" {
-    didSet {
-      delegate?.formDidChange()
-    }
+  var name = ""
+  
+  var email = ""
+  
+  var password = ""
+  
+  var passwordConfirmation = ""
+  
+  var gender = ""
+  
+  var hasValidName: Bool {
+    return !name.isEmpty
   }
   
-  var password = "" {
-    didSet {
-      delegate?.formDidChange()
-    }
+  var hasValidEmail: Bool {
+    return email.isEmailFormatted()
   }
   
-  var passwordConfirmation = "" {
-    didSet {
-      delegate?.formDidChange()
-    }
+  var hasValidPassword: Bool {
+    return !password.isEmpty && password.count >= 6
+  }
+  
+  var hasValidPasswordConfirmation: Bool {
+    return password == passwordConfirmation
+  }
+  
+  var hasValidGender: Bool {
+    return genders.contains(gender.capitalized)
   }
   
   var hasValidData: Bool {
     return
-      email.isEmailFormatted() && !password.isEmpty && password == passwordConfirmation
+      hasValidName && hasValidEmail && hasValidPassword && hasValidPasswordConfirmation && hasValidGender
   }
   
   func signup() {
     state = .loading
     UserService.sharedInstance.signup(
-      email, password: password, avatar64: UIImage.random(),
+      name: name, email, password: password, gender: gender, avatar64: UIImage.random(),
       success: { [weak self] in
         guard let self = self else { return }
         self.state = .idle

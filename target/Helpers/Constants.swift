@@ -27,3 +27,5 @@ enum ErrorDomain: String {
   case generic = "GenericError"
   case parsing = "ParsingError"
 }
+
+let genders = ["Female", "Male"]

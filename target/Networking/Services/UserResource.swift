@@ -12,7 +12,7 @@ import Moya
 enum UserResource: TargetType {
 
   case login(String, String)
-  case signup(String, String, UIImage)
+  case signup(String, String, String, String, UIImage)
   case signupMultipart(String, String, UIImage)
   case profile
   case fbLogin(String)
@@ -65,8 +65,8 @@ enum UserResource: TargetType {
     case .login(let email, let password):
       let parameters = getLoginParams(email: email, password: password)
       return requestParameters(parameters: parameters)
-    case .signup(let email, let password, let avatar64):
-      let parameters = getSignUpParams(email: email, password: password, avatar: avatar64)
+    case .signup(let name, let email, let password, let gender, let avatar64):
+      let parameters = getSignUpParams(name: name, email: email, password: password, gender: gender, avatar: avatar64)
       return requestParameters(parameters: parameters)
     case .signupMultipart(let email, let password, let avatar):
       let parameters = getSignUpMultipartParams(
@@ -93,14 +93,16 @@ enum UserResource: TargetType {
   }
 
   private func getSignUpParams(
-    email: String, password: String, avatar: UIImage
+    name: String, email: String, password: String, gender: String, avatar: UIImage
   ) -> [String: Any] {
     let picData = avatar.jpegData(compressionQuality: 0.75) ?? Data()
     return [
       "user": [
+        "username": name,
         "email": email,
         "password": password,
         "password_confirmation": password,
+        "gender": gender,
         "image": picData.asBase64Param()
       ]
     ]
