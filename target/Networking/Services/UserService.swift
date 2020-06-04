@@ -84,6 +84,7 @@ class UserService: BaseApiService<UserResource> {
   ) {
     request(
       for: .fbLogin(token),
+      at: "data",
       onSuccess: { [weak self] (result: User, response) -> Void in
         guard let headers = response.response?.allHeaderFields else {
           failure(UserServiceError.noResponse)

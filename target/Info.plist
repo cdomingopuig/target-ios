@@ -27,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fbXXXXXXXXXXXXXXX</string>
+				<string>fb166925907359293</string>
 			</array>
 		</dict>
 		<dict/>
@@ -38,9 +38,11 @@
 	<key>ConfigurationName</key>
 	<string>Debug</string>
 	<key>FacebookDisplayName</key>
-	<string></string>
+	<string>Target</string>
+	<key>FacebookAppID</key>
+	<string>166925907359293</string>
 	<key>FacebookKey</key>
-	<string></string>
+	<string>166925907359293</string>
 	<key>GoogleServicesFileName</key>
 	<string>$(GOOGLE_SERVICES_FILE)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

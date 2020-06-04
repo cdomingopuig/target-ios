@@ -58,7 +58,10 @@ class SignInViewController: UIViewController {
   @IBAction func tapOnSignUpButton(_ sender: Any) {
     AppNavigator.shared.navigate(to: OnboardingRoutes.signUp, with: .changeRoot)
   }
-
+  
+  @IBAction func tapOnConnectFacebookButton(_ sender: Any) {
+    viewModel.facebookLogin()
+  }
 }
 
 extension SignInViewController: SignInViewModelDelegate {

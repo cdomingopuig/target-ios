@@ -21,7 +21,7 @@ enum UserResource: TargetType {
 
   var path: String {
     let authBasePath = "/users"
-    let userBasePath = "/user"
+    let userBasePath = "/users"
     switch self {
     case .login:
       return "\(authBasePath)/sign_in"

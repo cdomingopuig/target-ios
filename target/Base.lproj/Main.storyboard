@@ -245,6 +245,21 @@
                                     <action selector="tapOnSignUpButton:" destination="8qd-iW-5fg" eventType="touchUpInside" id="bGV-MR-awq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDl-8H-vE0">
+                                <rect key="frame" x="126.5" y="453" width="161" height="29"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignInButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="A7f-zP-87n"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="hYO-Mn-rfl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
+                                <state key="normal" title="CONNECT WITH FACEBOOK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapOnConnectFacebookButton:" destination="8qd-iW-5fg" eventType="touchUpInside" id="tvO-kk-Ek3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <accessibility key="accessibilityConfiguration" identifier="SignInView"/>
@@ -252,8 +267,10 @@
                             <constraint firstItem="Nha-7W-Jey" firstAttribute="top" secondItem="SGW-mB-J78" secondAttribute="bottom" constant="24" id="3Xc-ws-4jb"/>
                             <constraint firstItem="gxV-AM-Yhy" firstAttribute="centerX" secondItem="NDI-Z9-Roh" secondAttribute="centerX" id="41F-gb-LHt"/>
                             <constraint firstItem="VXP-E8-PA8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SGW-mB-J78" secondAttribute="trailing" id="4QR-x6-Q0p"/>
-                            <constraint firstItem="uMP-Ea-ead" firstAttribute="top" secondItem="zbs-uB-Nr7" secondAttribute="bottom" constant="60" id="5i4-kc-m89"/>
+                            <constraint firstItem="wDl-8H-vE0" firstAttribute="centerX" secondItem="NDI-Z9-Roh" secondAttribute="centerX" id="4ms-1y-SPE"/>
+                            <constraint firstItem="uMP-Ea-ead" firstAttribute="top" secondItem="wDl-8H-vE0" secondAttribute="bottom" constant="60" id="5i4-kc-m89"/>
                             <constraint firstItem="Nha-7W-Jey" firstAttribute="top" secondItem="SGW-mB-J78" secondAttribute="bottom" constant="24" id="6gp-pJ-RkP"/>
+                            <constraint firstItem="wDl-8H-vE0" firstAttribute="top" secondItem="zbs-uB-Nr7" secondAttribute="bottom" constant="22" id="Dzc-lP-y9i"/>
                             <constraint firstItem="Nha-7W-Jey" firstAttribute="centerX" secondItem="NDI-Z9-Roh" secondAttribute="centerX" id="EOc-kL-4A6"/>
                             <constraint firstItem="zbs-uB-Nr7" firstAttribute="centerX" secondItem="NDI-Z9-Roh" secondAttribute="centerX" id="Gwa-0X-A3K"/>
                             <constraint firstItem="VXP-E8-PA8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SGW-mB-J78" secondAttribute="leading" id="Hge-vc-1aT"/>
@@ -289,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMa-tk-i2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156.875" y="427.5"/>
+            <point key="canvasLocation" x="1156.521739130435" y="427.23214285714283"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="qZP-Pf-s6w">
