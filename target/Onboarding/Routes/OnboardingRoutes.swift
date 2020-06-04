@@ -10,14 +10,11 @@ import Foundation
 import UIKit
 
 enum OnboardingRoutes: Route {
-  case firstScreen
   case signIn
   case signUp
 
   var screen: UIViewController {
     switch self {
-    case .firstScreen:
-      return buildFirstViewController()
     case .signIn:
       return buildSignInViewController()
     case .signUp:
@@ -39,13 +36,5 @@ enum OnboardingRoutes: Route {
     }
     signUp.viewModel = SignUpViewModelWithEmail()
     return signUp
-  }
-
-  private func buildFirstViewController() -> UIViewController {
-    guard let first = R.storyboard.main.firstViewController() else {
-      return UIViewController()
-    }
-    first.viewModel = FirstViewModel()
-    return first
   }
 }

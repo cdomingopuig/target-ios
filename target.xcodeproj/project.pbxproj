@@ -12,7 +12,6 @@
 		07276EBC23F5CCA70089C0AD /* XCUIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07276EBB23F5CCA70089C0AD /* XCUIApplicationExtension.swift */; };
 		07276EBE23F5CCCA0089C0AD /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07276EBD23F5CCCA0089C0AD /* XCUIElementExtension.swift */; };
 		07276EC023F5CE880089C0AD /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07276EBF23F5CE880089C0AD /* XCTestCaseExtension.swift */; };
-		07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07741D71218CDED600DB3B97 /* FirstViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
 		6316EF73246C8C3600A36A1F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6316EF6E246C8C3500A36A1F /* OpenSans-Regular.ttf */; };
@@ -50,7 +49,6 @@
 		E8290C021D8330A800599960 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8290C011D8330A800599960 /* StringExtension.swift */; };
 		E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FBB1BE1DD21A32000D6740 /* Session.swift */; };
 		E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FBB1C01DD21D18000D6740 /* SessionManager.swift */; };
-		FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54D5871E11C59600F0DBEA /* FirstViewController.swift */; };
 		FABDC9221EE1EB2B000DDAC3 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC9211EE1EB2B000DDAC3 /* ConfigurationManager.swift */; };
 		FE06840322CE7ED400C6294F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06840222CE7ED400C6294F /* R.generated.swift */; };
 		FE251D0722A7FE0F00E0DE90 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE251D0622A7FE0F00E0DE90 /* DataExtension.swift */; };
@@ -95,7 +93,6 @@
 		07276EBB23F5CCA70089C0AD /* XCUIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIApplicationExtension.swift; sourceTree = "<group>"; };
 		07276EBD23F5CCCA0089C0AD /* XCUIElementExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElementExtension.swift; sourceTree = "<group>"; };
 		07276EBF23F5CE880089C0AD /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
-		07741D71218CDED600DB3B97 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		0ABFB8911FA366D90098F751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0ABFB8941FA366EA0098F751 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -148,7 +145,6 @@
 		E8290C011D8330A800599960 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; tabWidth = 2; };
 		E8FBB1BE1DD21A32000D6740 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E8FBB1C01DD21D18000D6740 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		FA54D5871E11C59600F0DBEA /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FABDC9211EE1EB2B000DDAC3 /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		FE06840222CE7ED400C6294F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FE251D0622A7FE0F00E0DE90 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
@@ -261,7 +257,6 @@
 		078642F022E668BF0027BF11 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				07741D71218CDED600DB3B97 /* FirstViewModel.swift */,
 				9BAFB7C22114E3CD0099DC61 /* SignInViewModel.swift */,
 				9B8574D6212C81950063A3E2 /* SignUpViewModel.swift */,
 			);
@@ -273,7 +268,6 @@
 			children = (
 				9B3AA39A1ED35013005A4D26 /* SignUpViewController.swift */,
 				9B3AA3981ED35007005A4D26 /* SignInViewController.swift */,
-				FA54D5871E11C59600F0DBEA /* FirstViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -811,7 +805,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8290BFE1D832D9200599960 /* UIViewExtension.swift in Sources */,
-				07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */,
 				FE583F0C22AFC9EA00EF3CDA /* AnalyticsService.swift in Sources */,
 				FEE8080E22A6BB4F00743D1B /* APIError.swift in Sources */,
 				FE583F0E22AFC9F300EF3CDA /* FirebaseAnalyticsService.swift in Sources */,
@@ -830,7 +823,6 @@
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				634BE41F247FB7DD0028DE12 /* UIColorExtension.swift in Sources */,
-				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				FABDC9221EE1EB2B000DDAC3 /* ConfigurationManager.swift in Sources */,
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				FEE8081022A6C10900743D1B /* UserService.swift in Sources */,
